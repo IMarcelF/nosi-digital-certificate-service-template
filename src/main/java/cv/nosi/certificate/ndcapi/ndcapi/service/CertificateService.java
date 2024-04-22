@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class CertificateService {
@@ -55,7 +56,7 @@ public class CertificateService {
       context.setVariable("RECIPIENT_EMAIL", certificateRequest.recipientEmail());
       context.setVariable("COURSE_NAME", certificateRequest.courseName());
       context.setVariable("COURSE_DESCRIPTION", certificateRequest.courseDescription());
-      context.setVariable("ISSUE_DATE", certificateRequest.issueDate());
+      context.setVariable("ISSUE_DATE", certificateRequest.issueDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
       context.setVariable("SIGNATURE", certificateRequest.recipientName());
       return context;
    }

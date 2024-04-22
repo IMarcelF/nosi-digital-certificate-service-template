@@ -9,4 +9,5 @@ public class NosiDigitalCertificateApplication {
    public static void main(String[] args) {
       SpringApplication.run(NosiDigitalCertificateApplication.class, args);
    }
+
 }
